@@ -198,8 +198,18 @@ Applies only to co-managed devices running Windows 10 and later. Intune-only dev
 
 #### Device Security
 
+- **Firewall**: When set to **Require**, you can check compliance using a firewall. The Firewall needs to be on and monitoring
 - **Antivirus**: When set to **Require**, you can check compliance using antivirus solutions that are registered with [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), such as Symantec and Windows Defender. When **Not configured**, Intune doesn't check for any AV solutions installed on the device.
 - **AntiSpyware**: When set to **Require**, you can check compliance using antispyware solutions that are registered with [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), such as Symantec and Windows Defender. When **Not configured**, Intune doesn't check for any antispyware solutions installed on the device.
+
+#### Defender
+- **Windows Defender Antimalware**: When set to **Require**, you can check compliance using the Windows Defender Service (Supportd in Windows 10 desktop). When **Not Configured**, Intune doesn't check for Windows Defender to be enabled on the device. If you require this option and have an Antimalware different from Windows Defender your device will always return **Not Compliant**
+- **Windows Defender Antimalware minimum version**: When configured this setting checks for the version of Windows Defender and checks if the Windows Defender is above or equal to the version configured.
+- **Windows Defender Antimalware signature up-tp-date**: When set to **Require** you can check compliance using the signature of the Windows Defender that needs to be up-to-date
+- **Real-time protection**: When set to **Require** you can check compliance for using the Real-time protection. The real-time protection prompted for known malware detection. When set to **Not configured**, Intune doesn't check if the Real-time protection is enabled.
+
+  > [!NOTE]
+  > When the **Windows Defender Antimalware** is set to *Not configured* the settings under it appear greyed out. However, if they remain configured, even if they appear greyed out, intune checks them for compliance.
 
 ### Windows Defender ATP
 
