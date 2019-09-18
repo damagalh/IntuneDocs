@@ -274,13 +274,14 @@ You have enabled management and syncing between Apple and Intune, and assigned a
 See [Enroll your iOS device in Intune with the Device Enrollment Program](/intune-user-help/enroll-your-device-dep-ios).
 
 ## Renew a DEP token  
-1. Go to deploy.apple.com.  
-2. Under **Manage Servers**, choose your MDM server associated with the token file that you want to renew.
-3. Choose **Generate New Token**.
+1. Go to [Apple Business Manager](https://business.apple.com) or [Apple School Manager](https://school.apple.com) .
+2. Navigate to **Devices**
+2. Under **MDM Servers**, choose your MDM server associated with the token file that you want to renew.
+3. Click on **GetToken**, a .pem file will be downloaded
 
-    ![Screenshot of generate new token.](./media/device-enrollment-program-enroll-ios/generatenewtoken.png)
+>[!NOTE]
+>When you attempt to get the token a warning with "**Downloading a new server token will reset your existing one**:After downloading a new server token, you will need to upload it to your MDM server.". This is as expected since a new token was created for the same profile and only the last downloaded DEP token on the Apple portal can sync with MDM.
 
-4. Choose **Your Server Token**.  
 5. In [Intune in the Azure portal](https://aka.ms/intuneportal), choose **Device enrollment** > **Apple Enrollment** > **Enrollment program tokens** > choose the token.
     ![Screenshot of enrollment program tokens.](./media/device-enrollment-program-enroll-ios/enrollmentprogramtokens.png)
 
